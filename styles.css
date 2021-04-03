@@ -147,6 +147,7 @@ footer .footer-madeby {
 
 .hero {
   display: flex;
+  padding-top: 40px;
   height: 100vh;
   margin-bottom: 20px;
   background: linear-gradient(45deg, rgba(47, 44, 44, 1), rgba(56, 56, 56, 1));

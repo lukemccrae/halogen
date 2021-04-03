@@ -5,24 +5,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>halogen - enlightening virtual meetings</title>
+
     <link rel="stylesheet" href="styles.css"></link>
+    <link rel="stylesheet" href="slider.css"></link>
+
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,400;0,800;1,400&display=swap" rel="stylesheet">
+
     <script defer src="app.js"></script>
+    <script defer src="slider.js"></script>
+
     <nav class="home-nav">      
       <a href="">menu<div class="arrow-down"></div></a>
-      <button class="nav-button">TRY IT OUT</button>
+      <button onClick={showDemo()} class="nav-button">TRY IT OUT</button>
     </nav>
 </head>
 
 <body>
 <main>
-  <section class="hero">
+  <section id="hero" class="hero">
     <!-- logo: -->
     <div id="description-box">
       <img src="./assets/logo.png" alt="halogen logo" id="logo">
       <p>Instantly improve lighting in your video calls with halogen, a web-based lighting kit for all devices</p>
-      <button id="start-button">Get Started</button>
+      <button onClick={showDemo()} id="start-button">Get Started</button>
     </div>
     <!-- three device images: -->
     <div id="box-2">
@@ -32,15 +38,23 @@
     </div>
   </section>
 
-  <section class="demo">
+  <section>
     <div class="demo-image">
-        <img src="https://user-images.githubusercontent.com/13723156/106316407-49bde280-6232-11eb-9f30-6eb4c1ac2db7.png" alt="Closeup portrait">
+      <img src="https://user-images.githubusercontent.com/13723156/106316407-49bde280-6232-11eb-9f30-6eb4c1ac2db7.png" alt="Closeup portrait">
     </div>
+  </section>
+
+  <section id="demo" class="demo">
     <div class="example-circles">
         <div class="outer-circle">
             <div class="inner-circle">
-                
             </div>
+        </div>
+        <div class="x-slider-box">
+          <input oninput={xSlider(this.value)} type="range" min="1" max="100" value="50" class="xSlider" id="myRange">
+        </div>
+        <div class="y-slider-box">
+          <input oninput={ySlider(this.value)} type="range" min="1" max="100" value="50" class="ySlider" id="myRange">
         </div>
     </div>
   </section>
@@ -57,7 +71,7 @@
 <footer>
   <div class="footer-container">
     <div class="footer-icons">
-      <div><img src="icons/github.png"></div>
+      <div><a href="https://github.com/developer-delta/halogen"><img src="icons/github.png"></a></div>
       <div><img src="icons/insta.png"></div>
       <div><img src="icons/twitter.png"></div>
     </div>
